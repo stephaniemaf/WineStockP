@@ -34,6 +34,7 @@ namespace WineShop
             this.label3 = new System.Windows.Forms.Label();
             this.btnEnterShop = new System.Windows.Forms.Button();
             this.btnSearchWines = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,6 +46,7 @@ namespace WineShop
             this.label1.Size = new System.Drawing.Size(285, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chateau Du Vin";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -86,18 +88,30 @@ namespace WineShop
             this.btnSearchWines.UseVisualStyleBackColor = true;
             this.btnSearchWines.Click += new System.EventHandler(this.btnEnterclub_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(630, 379);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearchWines);
             this.Controls.Add(this.btnEnterShop);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entry Form";
             this.Load += new System.EventHandler(this.frmEntry_Load);
             this.ResumeLayout(false);
@@ -112,6 +126,7 @@ namespace WineShop
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEnterShop;
         private System.Windows.Forms.Button btnSearchWines;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

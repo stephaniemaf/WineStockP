@@ -29,6 +29,7 @@ namespace WineShop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@ namespace WineShop
             this.txtWineName = new System.Windows.Forms.TextBox();
             this.txtRegion = new System.Windows.Forms.TextBox();
             this.txtCountry = new System.Windows.Forms.TextBox();
-            this.txtColor = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtItemNum = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -52,6 +52,13 @@ namespace WineShop
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.txtPageNum = new System.Windows.Forms.TextBox();
+            this.cboColor = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbhAvailable = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtVintage = new System.Windows.Forms.TextBox();
+            this.tooltip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +91,7 @@ namespace WineShop
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 165);
+            this.label4.Location = new System.Drawing.Point(28, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 17);
             this.label4.TabIndex = 3;
@@ -93,7 +100,7 @@ namespace WineShop
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 210);
+            this.label5.Location = new System.Drawing.Point(27, 243);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 4;
@@ -102,7 +109,7 @@ namespace WineShop
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 250);
+            this.label6.Location = new System.Drawing.Point(27, 284);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 17);
             this.label6.TabIndex = 5;
@@ -114,6 +121,7 @@ namespace WineShop
             this.txtWineName.Name = "txtWineName";
             this.txtWineName.Size = new System.Drawing.Size(162, 22);
             this.txtWineName.TabIndex = 6;
+            this.tooltip1.SetToolTip(this.txtWineName, "Enter name of wine");
             this.txtWineName.TextChanged += new System.EventHandler(this.txtWineName_TextChanged);
             // 
             // txtRegion
@@ -122,6 +130,7 @@ namespace WineShop
             this.txtRegion.Name = "txtRegion";
             this.txtRegion.Size = new System.Drawing.Size(162, 22);
             this.txtRegion.TabIndex = 7;
+            this.toolTip2.SetToolTip(this.txtRegion, "Enter Region where wine is made");
             this.txtRegion.TextChanged += new System.EventHandler(this.txtRegion_TextChanged);
             // 
             // txtCountry
@@ -130,135 +139,160 @@ namespace WineShop
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(162, 22);
             this.txtCountry.TabIndex = 8;
+            this.toolTip2.SetToolTip(this.txtCountry, "Enter country wine is made ");
             this.txtCountry.TextChanged += new System.EventHandler(this.txtCountry_TextChanged);
-            // 
-            // txtColor
-            // 
-            this.txtColor.Location = new System.Drawing.Point(149, 160);
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(103, 22);
-            this.txtColor.TabIndex = 9;
-            this.txtColor.TextChanged += new System.EventHandler(this.txtColor_TextChanged);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(149, 205);
+            this.txtPrice.Location = new System.Drawing.Point(149, 238);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(103, 22);
             this.txtPrice.TabIndex = 10;
+            this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // txtItemNum
             // 
-            this.txtItemNum.Location = new System.Drawing.Point(149, 247);
+            this.txtItemNum.Location = new System.Drawing.Point(149, 279);
             this.txtItemNum.Name = "txtItemNum";
-            this.txtItemNum.Size = new System.Drawing.Size(162, 22);
+            this.txtItemNum.Size = new System.Drawing.Size(103, 22);
             this.txtItemNum.TabIndex = 11;
             this.txtItemNum.TextChanged += new System.EventHandler(this.txtItemNum_TextChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(403, 30);
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSearch.Location = new System.Drawing.Point(515, 149);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 28);
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "&Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(403, 64);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Location = new System.Drawing.Point(413, 149);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 28);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "&Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(403, 98);
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdate.Location = new System.Drawing.Point(413, 115);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 28);
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "&Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(403, 132);
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.Location = new System.Drawing.Point(413, 183);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 27);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "&Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(403, 198);
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Location = new System.Drawing.Point(515, 183);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 27);
             this.btnExit.TabIndex = 16;
             this.btnExit.Text = "&Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(403, 165);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancel.Location = new System.Drawing.Point(413, 216);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 27);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(30, 358);
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFirst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFirst.Location = new System.Drawing.Point(123, 393);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(75, 23);
             this.btnFirst.TabIndex = 18;
-            this.btnFirst.Text = "<< Frirst";
-            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Text = "<< First";
+            this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(111, 358);
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrevious.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPrevious.Location = new System.Drawing.Point(204, 393);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 23);
             this.btnPrevious.TabIndex = 19;
             this.btnPrevious.Text = "Previous";
-            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(298, 358);
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNext.Location = new System.Drawing.Point(391, 393);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 20;
             this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(379, 358);
+            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLast.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLast.Location = new System.Drawing.Point(472, 393);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(86, 23);
             this.btnLast.TabIndex = 21;
             this.btnLast.Text = "Last >>";
-            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // txtPageNum
             // 
-            this.txtPageNum.Location = new System.Drawing.Point(192, 358);
+            this.txtPageNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtPageNum.Location = new System.Drawing.Point(285, 393);
             this.txtPageNum.Name = "txtPageNum";
             this.txtPageNum.Size = new System.Drawing.Size(100, 22);
             this.txtPageNum.TabIndex = 22;
@@ -266,11 +300,62 @@ namespace WineShop
             this.txtPageNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPageNum.TextChanged += new System.EventHandler(this.txtPageNum_TextChanged);
             // 
+            // cboColor
+            // 
+            this.cboColor.FormattingEnabled = true;
+            this.cboColor.Location = new System.Drawing.Point(149, 196);
+            this.cboColor.Name = "cboColor";
+            this.cboColor.Size = new System.Drawing.Size(103, 24);
+            this.cboColor.TabIndex = 23;
+            this.cboColor.SelectedIndexChanged += new System.EventHandler(this.cboColor_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 318);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 17);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Available";
+            // 
+            // cbhAvailable
+            // 
+            this.cbhAvailable.AutoSize = true;
+            this.cbhAvailable.Location = new System.Drawing.Point(149, 318);
+            this.cbhAvailable.Name = "cbhAvailable";
+            this.cbhAvailable.Size = new System.Drawing.Size(18, 17);
+            this.cbhAvailable.TabIndex = 25;
+            this.cbhAvailable.UseVisualStyleBackColor = true;
+            this.cbhAvailable.CheckedChanged += new System.EventHandler(this.chbAvailable_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 160);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Vintage";
+            // 
+            // txtVintage
+            // 
+            this.txtVintage.Location = new System.Drawing.Point(149, 155);
+            this.txtVintage.Name = "txtVintage";
+            this.txtVintage.Size = new System.Drawing.Size(103, 22);
+            this.txtVintage.TabIndex = 27;
+            this.txtVintage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // frmStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(112)))), ((int)(((byte)(99)))));
+            this.ClientSize = new System.Drawing.Size(691, 450);
+            this.Controls.Add(this.txtVintage);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbhAvailable);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cboColor);
             this.Controls.Add(this.txtPageNum);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnNext);
@@ -284,7 +369,6 @@ namespace WineShop
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtItemNum);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtColor);
             this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.txtRegion);
             this.Controls.Add(this.txtWineName);
@@ -295,7 +379,9 @@ namespace WineShop
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockForm";
+            this.toolTip2.SetToolTip(this, "Enter year wine wads made");
             this.Load += new System.EventHandler(this.frmStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -313,7 +399,6 @@ namespace WineShop
         private System.Windows.Forms.TextBox txtWineName;
         private System.Windows.Forms.TextBox txtRegion;
         private System.Windows.Forms.TextBox txtCountry;
-        private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtItemNum;
         private System.Windows.Forms.Button btnSearch;
@@ -327,5 +412,12 @@ namespace WineShop
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.TextBox txtPageNum;
+        private System.Windows.Forms.ComboBox cboColor;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox cbhAvailable;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtVintage;
+        private System.Windows.Forms.ToolTip tooltip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
